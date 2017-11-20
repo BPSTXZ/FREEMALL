@@ -1,0 +1,145 @@
+.mui-mobile{
+	height:100%;
+	background-color:#fff;
+	padding-bottom: 3rem;
+}
+.mui-content{
+	background-color:#fff;
+}
+.user-map{
+	height:19.9rem;
+	background:url(../imgs/Pink.png) no-repeat;
+	background-size:100% 100%;
+	text-align:center;
+}
+.user-ico{
+	padding-top:4rem;
+}
+.user-ico img{
+	width:8rem;
+	height:8rem;
+	border-radius:50%;
+	border:2px solid #fff;
+	background-color:#fff;
+}
+.user-ico p{
+	font-size:14px;
+	color:#fff;
+	margin-top:10px;
+}
+@font-face {
+  font-family: 'iconfont';  /* project id 438211 */
+  src: url('//at.alicdn.com/t/font_438211_cn5jdv4m38dm42t9.eot');
+  src: url('//at.alicdn.com/t/font_438211_cn5jdv4m38dm42t9.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_438211_cn5jdv4m38dm42t9.woff') format('woff'),
+  url('//at.alicdn.com/t/font_438211_cn5jdv4m38dm42t9.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_438211_cn5jdv4m38dm42t9.svg#iconfont') format('svg');
+}
+.iconfont{
+	font-family:"iconfont";
+	font-size:25px;
+}
+.menu .money i{
+	    color: #e84e34;
+	    display:block;
+	    height:4.3rem;
+}
+.menu .card i{
+	color: #00c800;
+	font-size:30px;
+	display:block;
+}
+.menu .anan i{
+	color: #ffb627;
+	font-size:30px;
+	display:block;
+}
+.menu p{
+	font-size:14px;
+	color: #8f8f94;
+}
+.menu li{
+	float:left;
+	width: 33.33%;
+	text-align:center;
+}
+
+.menu{
+	width:100%;
+	height:7rem;
+}
+.h10{
+	background: #f4f4f4;
+    height: .50rem;
+}
+.mymember{
+	width:100%;
+	height:11rem;
+	padding:0 0.5rem;
+	box-sizing:border-box;
+}
+.mymember  .supershop{
+	    color: #ff0303;
+	    float:right;
+}
+.mymember a{
+		color: #8f8f94;
+}
+.mymember h1{
+	font-size:14px;
+}
+.mymember p{
+	font-size:14px;
+	margin-top:10px;
+}
+.mymember li {
+	float:left;
+	width:20%;
+	padding:1rem 0;
+	text-align:center;
+}
+.mymember li i {
+	font-size:28px;
+}
+.list-menu{
+	width:100%;
+	padding:.5rem 1rem;
+	/*height:18rem;*/
+	box-sizing:border-box;
+	position:relative;
+}
+.list-menu li{
+	font-size:14px;
+	border-bottom:1px solid #efefef  ;
+	height:3.5rem;
+}
+.list-menu  span{
+	display:border;
+	line-height:3rem;
+	color:black;
+}
+.list-menu i{
+	position:absolute;
+	right:10px;
+	font-size:15px;
+}
+.list-menu a{
+	display: block;
+	widows: 100%;
+}
+
+.foot{
+	width: 100%;
+	background: rgba(205,205,205,1);
+	position: fixed;
+	bottom: 0;
+	height: 3rem;
+	border-top: 1px solid #CDCDCD;
+}
+
+.foot-1{
+	margin-top: .5rem;
+	text-align: center;
+	font-size: 1rem;
+	color: white;
+}

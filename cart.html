@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="css/cart.css"/>
+	</head>
+	<body>
+		<header class="cart-header">
+			<span class="glyphicon glyphicon-chevron-left toback"></span>
+			<h2>购物车</h2>
+			
+		</header>
+		<div class="cart-main" >
+			<ul id="cart-goods">
+				<!--<img src="imgs/cart/nothing.png"/>-->
+				<!--<li class="cart-good" data-id="">
+					<input type="checkbox" class="good-check" checked="checked" name="" id="" />
+					<a class="c-g-img">
+						<img src="imgs/cart/qcp.png"/>
+					</a>
+					<div class="c-g-text">
+						<h4>商品名称</h4>
+						<p>商品描述</p>
+						<div class="c-g-price">
+							<div class="prices">
+								￥<span>100.0</span>
+							</div>
+							<div class="num">
+								<a href="javascript:;" class="min-btn">-</a>
+								<span>2</span>
+								<a href="javascript:;" class="add-btn">+</a>
+							</div>
+						</div>
+					</div>
+				</li>-->
+				
+				
+			</ul>
+		</div>
+		<footer class="cart-foot">
+			<div class="allcheck">
+				<input type="checkbox" name="" id="allcheck" />
+				<label for="allcheck">全选</label>
+			</div>
+			
+			<a href="javascript:;" id="balance">结算</a>
+			<p>总价：<span class="total" id="total">0</span></p>
+		</footer>
+		<div class="cart-modal">
+			<div class="cart-modal-body">
+				<div class="c-m-head">
+					<a href="javascript:;">新增地址</a>
+					<span id="modal-close" class="glyphicon glyphicon-remove-circle"></span>
+				</div>
+				<ul class="c-m-main" id="c-m-main">
+					<!--<li class="active"><span class="c-m-prov">湖南省</span>
+						<span class="c-m-city">长沙市</span>
+						<span class="c-m-county">天心区</span>
+						<span class="c-m-address">五一广场</span>
+					</li>-->
+					
+				</ul>
+				<div class="c-m-ensure">
+					
+					<a href="javascript:;" id="enbalance">提交订单</a>
+					<p>总价：<span class="total" id="entotal">0</span></p>
+				</div>
+			</div>
+		</div>
+		<!--底部图标区-->
+		<div class="foot">
+			<a href="index.html">
+				<div class="glyphicon glyphicon-home foot-1 col-xs-4" >	
+					<div>主页</div>
+			  </div>
+			</a>
+			<a href="cart.html">
+				<div class="glyphicon glyphicon-gift foot-1 col-xs-4" style="color:rgba(102,204,255,.8) ;">
+					<div>购物包</div>
+			  </div>
+			</a>
+			<a href="user.html">
+				<div class="glyphicon glyphicon-user foot-1 col-xs-4">
+					<div>我的</div>
+			  </div>
+			</a>
+		</div>
+		<script>
+			var footB=document.querySelectorAll('.foot-1');			
+			for(var i=0;i<footB.length;i++){
+				footB[i].onclick=function(){
+					for(var j=0;j<footB.length;j++){
+						footB[j].style.color="white";
+					}
+					this.style.color='rgba(204,255,204,1)';
+					console.log(footB);
+				}
+			}
+		</script>
+		<script src="components/jquery-1.12.3.min.js"></script>
+		<!--<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>-->
+		<script src="components/swiper-3.4.2.jquery.min.js"></script>
+		
+		<script src="bootstrap/js/bootstrap.js"></script>
+		<script src="components/common.js"></script>
+		<script src="js/cart.js"></script>
+	</body>
+</html>

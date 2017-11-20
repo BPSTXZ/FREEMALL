@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/login.css" />
+		<title></title>
+	</head>
+	<body>
+		<div class="login-page">			
+				<a href="#" class="help">帮助</a>
+			<div class="Hashtag">FREEMALL</div>
+			<div class="input">
+				<input type="text" placeholder="手机号/会员号/邮箱"/>
+				<input  type="password" placeholder="请输入密码"/>
+			</div>	
+			<button>登录</button>
+			<div class='retrieve'>
+				<a href="register.html" class="Right-Click red" style="color: red;font-weight: 600;">立即注册</a>
+				<a href="#" class="Right-Click">忘记密码</a>
+			</div>					
+			<div class="Other-login">其他登陆方式</div>
+			<div class="tubiao"></div>
+		</div>
+		<script src="components/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+		  (function(){
+		  	    var bt=document.querySelector("button");
+		  	    var lock=true;
+		  	    bt.addEventListener("touchstart",function(){
+		  	    	if(!lock){
+		  	    		return;
+		  	    	}
+		  	    	lock=false;
+		  	    	var data=getLoginMessage();
+                   $.ajax({
+                   	type:"post",
+                   	url:"http://h6.duchengjiu.top/shop/api_user.php",
+                    data:data,
+                    success:function(jsondata){
+//                  	 console.log(jsondata);
+                         lock=true;
+//                       console.log(lock);
+		    		    if(jsondata.message!="登录成功"){
+		    		    	alert(jsondata.message);
+		    		    	return;
+		    		    }
+		    		   localStorage.token = jsondata.data.token;
+		               localStorage.username = jsondata.data.username;
+		               if (localStorage.backurl) {
+				          location.href = localStorage.backurl;
+				        } else {
+				          location.href = 'index.html';
+				        }
+				        
+                    }
+                   });           
+		  	    });
+		  	    
+		  	
+		  	
+		  	
+		  	
+		  	 	function getLoginMessage(){
+		   	 	 var username=document.querySelector("input[type=text]");
+		   	 	 var pass=document.querySelector("input[type=password]");
+//		   	 	 console.log(username,pass);
+		   	 	 return {
+		   	 	 	 status: 'login',
+	    			 username:username.value,
+	    			 password:pass.value,
+		   	 	 }
+		   	    }
+		  	 	
+		  })()
+		</script>
+	</body>
+</html>

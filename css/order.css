@@ -1,0 +1,139 @@
+body{
+	background: white;
+	color: #444444;
+}
+.header{
+	width: 100%;
+	height: 50px;
+	position: fixed;
+	top: 0;
+	z-index: 10;
+	background-color: white;
+	border-bottom: 1px solid rgb(180,180,180);
+}
+.header .toback{
+	position: absolute;
+	line-height: 50px;
+	left: 10px;
+	font-size: 1.2rem;
+}
+.header h2{
+	text-align: center;
+	font-size: 1.3rem;
+	line-height: 50px;
+}
+
+.order-main{
+	width: 100%;
+	min-height: 100vh;
+	background-color: rgb(240,240,240);
+	padding: 50px 0;
+}
+
+.order-main .nothing{
+	position: absolute;
+	top: 100px;
+	width: 100%;
+	height: 100px;
+	text-align: center;
+}
+.order-main .nothing img{
+	height: 90px;
+	margin: 0 auto;
+}
+.order-main .nothing p{
+	color: #333333;
+	font-size: 1.3rem;
+	line-height: 30px;
+}
+
+.order{
+	width: 100%;
+	margin-top: 0.4rem;
+	background-color: white;
+	box-sizing: border-box;
+	height: 13.5rem;
+}
+
+.order-head{
+	width: 100%;
+	padding: 0 1.2rem;
+	height: 2.5rem;
+	font-size: 1.2rem;
+	line-height: 2.5rem;
+}
+.order-head .delate{
+	float: right;
+	line-height: 2.5rem;
+}
+.order-body{
+	width: 100%;
+	box-sizing: border-box;
+	height: 6rem;
+	padding: 0 0.4rem;
+	background-color: #FFEFDB;
+}
+.good-img{
+	float: left;
+	width: 25%;
+	height: 100%;
+}
+.good-img img{
+	float: right;
+	height: 90%;
+	margin: 5% 0;
+}
+.good-text{
+	width: 75%;
+	float: right;
+	box-sizing: border-box;
+	padding: 0 1rem;
+}
+.good-text .good-msg{
+	width: 70%;
+	float: left;
+}
+.good-name{
+	font-size: 1.1rem;
+	line-height: 2rem;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.good-dec{
+	font-size: 1rem;
+	line-height: 1.5rem;
+}
+.good-price,.good-num{
+	width: 30%;
+	float: right;
+	line-height: 1.4rem;
+	text-align: right;
+}
+
+
+.order-add{
+	width: 100%;
+	box-sizing: border-box;
+	height: 2.5rem;
+	line-height: 2.5rem;
+	padding: 0 2rem;
+	text-align: left;
+}
+.order-add .order-tel{
+	display: inline-block;
+	float: right;
+}
+
+.order-foot{
+	width: 100%;
+	height: 2.5rem;
+	box-sizing: border-box;
+	padding: 0 2rem;
+	text-align: right;
+	line-height: 2.5rem;
+}
+.order-foot span{
+	font-size: 1.2rem;
+	color: coral;
+}

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- UC强制全屏 -->  
+    <meta name="full-screen" content="yes">  
+    <!-- QQ强制全屏 -->  
+    <meta name="x5-fullscreen" content="true"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>商品详情</title>
+ <!-- bootstrap的CSS-->
+  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- swiper的CSS-->	
+  <link rel="stylesheet" href="swiper/swiper-3.4.2.min.css">	
+  <link rel="stylesheet" href="swiper/animate.min.css">
+    <!--  首页CSS-->
+  	<!--<link rel="stylesheet" type="text/css" href="css/reset.css"/>-->
+  	<link rel="stylesheet" type="text/css" href="css/list.css"/>
+	</head>
+	<body>
+		 <!--内容区-->
+			  
+			  <!--头部包括搜索框-->
+			 <nav class="navbar">
+			 	<h5 class="logo">TXZVIP</h5>
+			 	<div class="search">
+			 		<img src="imgs/sech.png"/>
+			 	</div>
+			 	<div class="search-input">
+			 		<input id="search"  type="text" name="" class="input-1" placeholder="想要的宝贝" />
+			 	</div>
+			 	
+			 	 <script src="js/animate.js" charset="utf-8"></script>
+			 	 <script src="js/animate.js" charset="utf-8"></script>
+			 	<script type="text/javascript">
+			 		var search=document.querySelector('.search-input');
+						var searchDon=document.querySelector('.search');
+						var clickCount = 0;
+						searchDon.onclick=function(){
+							animate(search, {"top": 0}, 300, "BackEaseIn");	
+							if (clickCount <1) {
+						        clickCount++;
+						        //append data
+						   } else if (clickCount!=0&&oSearch.value!==""){
+				           location.href = 'search.html?search_text='+oSearch.value;
+						    }else if (oSearch.value=="") {
+						    	alert("请输入搜索内容哦~");
+						    }
+						    
+						}	
+						var oSearch = document.querySelector("#search");
+				      oSearch.onkeyup = function(event) {
+				        if (event.keyCode === 13) {
+				        		location.href = 'search.html?search_text='+this.value;		          
+				        }
+				      }
+			 	</script>
+			 </nav>
+		<!--热门商品-->
+		<div id="main-nav">
+		<!--热门商品图标-->
+		<ul class="icon">
+			<li  class="glyphicon glyphicon-blackboard li-1 "></li>
+			<li  class="glyphicon glyphicon-lamp li-2 "></li>
+			<li  class="glyphicon glyphicon-erase li-3 "></li>
+			<li  class="glyphicon glyphicon-phone li-4 "></li>
+			<li  class="glyphicon glyphicon-grain li-5"></li>
+			<li  class="glyphicon glyphicon-cutlery li-6 "></li>
+		</ul>
+		<!--热门商品列表-->
+		<ul id="cat" class="cat"></ul>
+		<script src="js/myajax.js" charset="utf-8"></script>
+		    <script>
+		    var oCat = document.querySelector('#cat');
+		    myajax.get('http://h6.duchengjiu.top/shop/api_cat.php', {}, function(error, responseText){
+		        var json = JSON.parse(responseText);//返回的整个json对象
+		        var data = json.data;//json对象当中的data是一个数组
+		        for (var i = 0; i < data.length-4; i++) {
+		          var obj = data[i];//数组里面的每一项是一个商品分类的对象
+		          oCat.innerHTML += `<a href="list.html?cat_id=${obj.cat_id}"><li class="cat-li">${obj.cat_name}</li></a>`;
+		        }
+		    });
+		    </script>	
+		    </div>
+		<!--热门商品-->
+		  <div class="commodity">
+		    <ul id="hot-goods"></ul>
+		    <div class="no">
+		    </div>
+		  </div>
+		<script src="js/underscore.js"></script>
+		<script src="js/jquery-3.2.1.js"></script>
+		  <script>
+		  var cat_id = getQueryString('cat_id');
+			var nO=document.querySelector('.no');
+	    var oGoods = document.querySelector('#hot-goods');
+	    var page = 1;
+   	  var pagesize = 8;
+	    function getContent(){    
+	    myajax.get('http://h6.duchengjiu.top/shop/api_goods.php',
+	    {cat_id: cat_id,page, pagesize},
+	    (err,responseText) => {
+	      var json = JSON.parse(responseText);
+	      var data = json.data;
+	      //判断如果没有数据，则显示空的提示
+	      if (data.length === 0) {
+	        oGoods.innerHTML = "<center>后端程序员跑路了</center>";
+	        return;
+	      }
+		      for (var i = 0; i < data.length; i++) {
+		        var obj = data[i];
+		        oGoods.innerHTML += `<li class="remenli ">
+		        <a href="detail.html?goods_id=${obj.goods_id}">
+		          <div class="oimg"><img src="${obj.goods_thumb}" /></div>
+		          <div class="good">${obj.goods_name}</div>
+		          <div class="price">$ ${obj.price}</div>
+		        </a>
+		        </li>`;
+		      }
+		      lock = true;
+		    });
+		    }   
+		    getContent();		
+		    var lock = true;
+		    // 当我们滚动到页面底部的时候 (百分之七十的时候我们就加载更多)
+		    $(window).scroll(function(){
+		      if (!lock) return;
+		      var rate = $(document).scrollTop() / $(document).height();
+		      console.log(rate);
+		      if (rate > 0.3) {
+		        getContent(++page);//page是内定的（改了会加载重复的）
+		        lock = false;//加锁
+		      }
+		       });
+				  </script>
+		 <!-- 分页区-->
+		 <!--<nav aria-label="Page navigation">
+			  <ul class="pagination fenye">
+			    <li class="fen1">
+			      <a href="#" aria-label="Previous">
+			        <span aria-hidden="true">&laquo;</span>
+			      </a>
+			    </li>
+			    <li class="fen2">
+			      <a href="#" aria-label="Next">
+			        <span aria-hidden="true">&raquo;</span>
+			      </a>
+			    </li>
+			  </ul>
+			</nav>-->
+		<!--底部图标区-->
+		<div class="foot">
+			<a href="index.html">
+				<div class="glyphicon glyphicon-home foot-1 col-xs-4">	
+					<div>主页</div>
+			  </div>
+			</a>
+			<a href="cart.html">
+				<div class="glyphicon glyphicon-gift foot-1 col-xs-4">
+					<div>购物包</div>
+			  </div>
+			</a>
+			<a href="user.html">
+				<div class="glyphicon glyphicon-user foot-1 col-xs-4">
+					<div>我的</div>
+			  </div>
+			</a>
+		</div>
+		<script>
+			var footB=document.querySelectorAll('.foot-1');			
+			for(var i=0;i<footB.length;i++){
+				footB[i].onclick=function(){
+					for(var j=0;j<footB.length;j++){
+						footB[j].style.color="white";
+					}
+					this.style.color='red';
+					console.log(footB);
+				}
+			}
+		</script>
+		<!--首页js-->
+		<script src="js/index.js"></script>	
+		<!--swiper的JS-->
+		<script src="swiper/swiper-3.4.2.min.js"></script>
+		<script src="swiper/swiper.animate1.0.2.min.js"></script>
+		<!--bootstra的JS-->
+		<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+		<script src="bootstrap/js/bootstrap.min.js"></script>
+		<!--animate-->
+		<script src="js/animate.js"></script>
+		<!--jquery-->
+		<script src="js/underscore.js"></script>
+		<script src="js/jquery-3.2.1.js"></script>
+	</body>
+</html>

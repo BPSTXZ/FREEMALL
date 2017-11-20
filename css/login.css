@@ -1,0 +1,114 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+a{
+	text-decoration: none;
+}
+html,body{
+	color: white;
+	width: 100%;
+	font-size: 15px;
+	height: 100%;
+	background: url(../imgs/21.jpg) no-repeat; 
+	background-size: 100% 100%;
+}
+/*媒体查询*/
+@media screen and (min-width: 375px) {
+	html,body{
+		font-size: 15px;
+	}
+}
+@media screen and (min-width: 321px) {
+	html,body{
+		font-size: 13px;
+	}
+}
+@media screen and (max-width: 321px) {
+	html,body{
+		font-size: 12px;
+	}
+}
+.help{
+	color: white;
+	font-size: 3rem;
+	display: block;
+	opacity: .8;
+	margin: 1.5rem 0.5rem 0 67rem;
+}
+
+.Right-Click{
+	float:right;
+}
+.red{
+	background: rgba(250,250,250,.5);
+	border: 1px solid white;
+	border-radius: 1rem;
+}
+.Hashtag{
+	text-align: center;
+	width: 70%;
+	margin: auto;
+	margin-top: 30%;
+	margin-bottom: 10%;
+	font-size: 100px;
+    font-weight:bold;	
+    border: 1px solid white;
+}
+input{
+	width:80%;	
+	margin: auto;		
+	margin-bottom: 5rem;
+	margin-top: 3rem;
+	font-size: 4.5rem;
+	padding: 2%;
+	display: block;
+	border-bottom: 1px solid white;
+	border-radius: 1rem;
+	outline: none;
+	background:rgba(255,255,255,.5);
+}
+.input{
+	margin-top: 10rem;
+}
+.retrieve{
+	width: 98%;
+	margin: 0 auto;
+	opacity: .8;
+}
+.retrieve a{
+	display: inline-block;	
+	width: 20%;
+	text-align: center;
+    text-decoration:none;	
+    margin-top:4rem ;
+    color:white;	
+    font-size: 40px;
+	
+}
+button{	
+	width: 80%;	
+	margin: auto;
+	margin-top: 7rem;
+	background-color: rgba(254,179,84,.8);
+    font-size: 50px;
+    display: block;
+    padding:2%;	
+    color: white;
+    border-radius:3rem ;
+}
+.Other-login{	
+    font-size: 40px;
+    margin-left: 4rem;
+    margin-top:20rem;
+    font-size: 3.5rem;	
+    opacity: .8;
+}
+.tubiao{
+	width: 100%;
+	background:url(../imgs/2.png);
+	height: 19.5rem;
+	position: absolute;
+	bottom: 0;
+	background-size: 100% 100%;
+}

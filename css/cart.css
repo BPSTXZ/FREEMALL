@@ -1,0 +1,287 @@
+body{
+	background-color: white;
+	width: 100%;
+}
+.cart-header{
+	width: 100%;
+	height: 50px;
+	position: fixed;
+	background: white;
+	color: #444444;
+	top: 0;
+	z-index: 10;
+
+	border-bottom: 1px solid rgb(180,180,180);
+}
+.cart-header span.toback{
+	position: absolute;
+	line-height: 50px;
+	left: 10px;
+	font-size: 1.2rem;
+}
+.cart-header h2{
+	font-size: 1.3rem;
+	text-align: center;
+	line-height: 50px;
+}
+
+
+.cart-main{
+	width: 100%;
+	margin-top: 50px;
+	padding-bottom: 150px;
+}
+.cart-main .nothing{
+	position: absolute;
+	top: 100px;
+	width: 100%;
+	height: 100px;
+	text-align: center;
+}
+.cart-main .nothing img{
+	height: 90px;
+	margin: 0 auto;
+}
+.cart-main .nothing p{
+	color: #333333;
+	font-size: 1.3rem;
+	line-height: 30px;
+}
+.cart-good{
+	width: 100%;
+	height: 6rem;
+	padding: 0 1.2rem;
+	margin: 3px 0;
+	color: #000000;
+	/*border-top: 1px solid salmon;*/
+	border-bottom: 1px solid rgb(200,200,200);
+	position: relative;
+}
+.cart-good input{
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	left: 20px;
+	top: 50%;
+	margin-top: -10px;
+	outline: none;
+	border: none;
+}
+.c-g-img{
+	display: block;
+	width: 30%;
+	height: 100%;
+	float: left;
+	margin-left: 8%;
+	text-align: center;
+}
+.c-g-img img{
+	/*width: 100%;*/
+	height: 90%;
+	margin: 5% 0;
+	/*border: 1px solid #0F0F0F;
+	border-radius: 50%;*/
+}
+.c-g-text{
+	width: 60%;
+	float: right;
+}
+.c-g-text h4{
+	width: 90%;
+	height: 3.5rem;
+	font-size: 1rem;
+	line-height: 2rem;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.c-g-text .delate{
+	position: absolute;
+	width: 2rem;
+	right: 0.5rem;
+	top: 0.3rem;
+	color: red;
+	line-height: 1.6rem;
+}
+.c-g-text p{
+	color: #666666;
+	font-size: 0.8rem;
+	margin: 0.4rem 0;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.c-g-price{
+	font-size: 1.2rem;
+	line-height: 2.2rem;
+}
+.c-g-price .prices{
+	color: red;
+	float: left;
+	font-size: 1.2rem;
+}
+
+.c-g-price .num{
+	float: right;
+	font-size: 1rem;
+}
+.c-g-price .num a{
+	display: inline-block;
+	border: 1px solid #e0e0e0;
+	padding: 0 5px;
+	color: #007aff;
+	height: 25px;
+	text-align: center;
+	line-height: 25px;
+	text-decoration: none;
+}
+.c-g-price .num span{
+	display: inline-block;
+	border: 1px solid #e0e0e0;
+	padding: 0 8px;
+	height: 25px;
+	text-align: center;
+	line-height: 25px;
+	margin: 0 -5px;
+}
+
+
+.cart-foot{
+	width: 100%;
+	height: 60px;
+	position: fixed;
+	bottom: 3rem;
+	z-index: 10;
+	color: black;
+	line-height: 60px;
+	background-color: white;
+	border-top: 1px solid rgb(180,180,180);
+}
+.cart-foot .allcheck{
+	float: left;
+	
+}
+.cart-foot input{
+	width: 20px;
+	height: 20px;
+	margin:20px 0 20px 20px;
+	/*position: absolute;*/
+	/*left: 20px;*/
+	/*top: 50%;*/
+	/*margin-top: -10px;*/
+	outline: none;
+}
+.cart-foot>label{	
+	line-height: 50px;
+}
+.cart-foot>a{
+	display: inline-block;
+	float: right;
+	width: 30%;
+	height: 100%;
+	background-color: #f23030;
+	color: white;
+	text-align: center;
+	font-size: 1.2rem;
+	text-decoration: none;
+}
+.cart-foot>p,.c-m-ensure>p{
+	display: inline-block;
+	float: right;
+	width: 40%;
+	line-height: 60px;
+	text-align: center;
+	font-weight: 700;
+}
+.cart-foot .total,.c-m-ensure .total{
+	color: red;
+}
+
+
+.cart-modal{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 11;
+	display: none;
+	background: rgba(50,50,50,.4);
+}
+
+.cart-modal-body{
+	position: fixed;
+	width: 100%;
+	/*height: 50%;*/
+	z-index: 12;
+	color: #666666;
+	background-color: whitesmoke;
+	bottom: -100%;
+}
+.c-m-head{
+	width: 100%;
+	height: 50px;
+	position: relative;
+	top: 0;
+	padding: 0 10px;
+	line-height: 50px;
+	font-size: 1.1rem;
+	border-bottom: 1px solid rgb(200,200,200);
+}
+.c-m-head a{
+	float: left;
+	color: darkorange;
+	text-decoration: none;
+}
+.c-m-head span{
+	float: right;
+	line-height: 50px;
+}
+.c-m-main{
+	overflow-y: auto;
+}
+.c-m-main li{
+	width: 100%;
+	height: 40px;
+	padding: 0 20px;
+	line-height: 40px;
+	/*border-top: 1px solid rgb(220,220,220);*/
+	border-bottom: 1px solid rgb(220,220,220);
+}
+.c-m-main .active{
+	background-color: orange;
+	color: white;
+}
+.c-m-ensure{
+	width: 100%;
+	height: 60px;
+	/*padding: 5px;*/
+}
+.c-m-ensure a{
+	display: inline-block;
+	float: right;
+	width: 40%;
+	height: 60px;
+	background-color: red;
+	color: white;
+	text-align: center;
+	line-height: 60px;
+	font-size: 1.2rem;
+	text-decoration: none;
+}
+
+.foot{
+	width: 100%;
+	background: rgba(205,205,205,1);
+	position: fixed;
+	bottom: 0;
+	height: 3rem;
+	border-top: 1px solid #CDCDCD;
+}
+
+.foot-1{
+	margin-top: .5rem;
+	text-align: center;
+	font-size: 1rem;
+	color: white;
+}

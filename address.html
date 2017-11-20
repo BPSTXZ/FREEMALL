@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/address.css"/>
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+	</head>
+	<body class="address">
+		<div class="address-nav">
+			<a href="user.html">
+				<i><</i>
+				<span class="address-size">管理收货地址</span>
+			</a>
+		</div>
+		<ul class="address-list"></ul>
+		<div class="bottom-btn" id="bottom-btn">
+			<span>添加收货地址</span>
+		</div>
+	<div class="out-box" id="out-box"></div>
+		<div class="address-modal" id="address-modal">
+		<a>
+			<span id="modal-disappear">< 添加新地址</span>
+			<b id="finish">完成</b>
+		</a>
+		<ul>
+			<li>
+					<p class="sh">收 货 人 <input type="text" class="list-botm"/></p>
+			</li>
+			<li>
+					<p>联系电话 <input type="text" class="list-phone" id="list-phone"/></p>
+			</li>
+			<li>
+				<p>所在省<i id="choice">
+				<select class="list-prov">
+					<option value="0" selected>请选择</option>
+					<option value="陕西">陕西</option>
+					<option value="湖南">湖南</option>
+					<option value="山西">山西</option>
+					<option value="黑龙江">黑龙江</option>
+				</select>
+				</i>
+				</p>
+			</li>
+			<li>
+				<p>所在市<i>
+					<select class="list-place">
+					<option value="0" selected>请选择</option>
+					<option value="西安">西安</option>
+					<option value="长沙">长沙</option>
+					<option value="太原">太原</option>
+					<option value="哈尔滨">哈尔滨</option>
+				</select>
+				</i>
+				</p>
+			</li>
+			<li>
+				<input type="text"  placeholder="详细地址" class="detail"/>
+			</li>
+			<li>
+				<p>设为默认地址 <i><input type="checkbox" class="moren" /></i></p>
+			</li>
+		</ul>
+		</div>
+	<script src="components/jquery-1.12.3.min.js"></script>
+	<script src="js/address.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>
+<!--<i class="iconfont">&#xe601;</i>-->
+	
