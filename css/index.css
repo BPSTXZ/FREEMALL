@@ -37,17 +37,17 @@ html,body{
 }  
 
 .slide1{
-	background: url("https://www.vipp.com/sites/default/files/xvipp-2-shower-wiper-1.jpg.pagespeed.ic.nzG2tSQKHj.webp");
+	background: url(../imgs/轮播图片/xaesop-fr-headoffice-1-0.jpg.pagespeed.ic.Kc0P2vLWOZ.webp);
 	background-size:100% 100% ;
 }
 
 .slide2{
-	background: url("https://www.vipp.com/sites/default/files/xkitchen-vipp-frontpage.jpg.pagespeed.ic.B1vNkbH-YT.webp");
+	background: url(../imgs/轮播图片/xvipp-16-pedal-bin-4.jpg.pagespeed.ic.00ERKzT-Z_.webp);
 	background-size:100% 100% ;
 }
 
 .slide3{
-	background: url("https://www.vipp.com/sites/default/files/xaesop-fr-headoffice-1-0.jpg.pagespeed.ic.Kc0P2vLWOZ.webp");
+	background: url(../imgs/轮播图片/xvipp-kitchen-loft-17.jpg.pagespeed.ic.6bnauQlyVs.webp);
 	background-size:100% 100% ;
 }
 
