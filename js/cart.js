@@ -71,7 +71,7 @@ if (localStorage.username) {
       //删除键事件
       $('.delate').on('touchstart', function() {
         if (confirm("确定要删除该购物车商品？")) {
-          alert("后台没写删除购物车商品的API");
+          alert("后端没写删除购物车商品的API");
         }
       });
     }
