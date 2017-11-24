@@ -1,79 +1,82 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<link rel="stylesheet" type="text/css" href="css/register.css" />
-		<title></title>
-	</head>
-	<body>
-		<div class="login-page">
-			<div class="Guide-bar">
-				<a href="#" class="left-hander">＜</a>
-				<a href="login.html" class="Right-Click">登录 </a>
-			</div>
-			<div class="Hashtag">FREEMALL</div>
-			<input type="text" placeholder="动态码"/>			
-			<input type="password" placeholder="密码"/>
-			<button>快速注册</button>	
-			<div class="Other-login">注册表示已同意《优惠商城使用协议》和《优惠商城隐私权条款》</div>			
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/register.css" />
+	<title></title>
+</head>
+
+<body>
+	<div class="login-page">
+		<div class="Guide-bar">
+			<a href="#" class="left-hander">＜</a>
+			<a href="login.html" class="Right-Click">登录 </a>
 		</div>
-		<script src="components/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
-		<script type="text/javascript">
-		  (function(){
-		  	    var bt=document.querySelector("button");
-		  	    var lock=true;
-		  	    bt.addEventListener("touchstart",function(){
-		  	    	if(!lock){
-		  	    		return;
-		  	    	}
-		  	    	lock=false;
-		  	    	var data=getLoginMessage();
-                   $.ajax({
-                   	type:"post",
-                   	url:"http://h6.duchengjiu.top/shop/api_user.php",
-                    data:data,
-                    success:function(jsondata){
-                    	 console.log(jsondata);
-                         lock=true;
-                         
-                         console.log(lock);
-		    		    if(jsondata.message!="注册成功"){
-		    		    	alert(jsondata.message);
-		    		    	return;
-		    		    }else{
-		    		    	
-		    		    	var r=confirm("注册成功,是否立即返回登陆页");
-		    		    	if(r){
-		    		    		location.href = 'login.html';
-		    		    	}
-		    		    	
-		    		    }
-//		               if (localStorage.backurl) {
-//				          location.href = localStorage.backurl;
-//				        } else {
-//				          location.href = 'login.html';
-//				        }
-				        
-                    }
-                   });           
-		  	    });
-		  	    
-		  	
-		  	
-		  	
-		  	
-		  	 	function getLoginMessage(){
-		   	 	 var username=document.querySelector("input[type=text]");
-		   	 	 var pass=document.querySelector("input[type=password]");
-//		   	 	 console.log(username,pass);
-		   	 	 return {
-		   	 	 	 status: 'register',
-	    			 username:username.value,
-	    			 password:pass.value,
-		   	 	 }
-		   	    }
-		  	 	
-		  })()			 
-		</script>
-	</body>
+		<div class="Hashtag">FREEMALL</div>
+		<input type="text" placeholder="用户名" />
+		<input type="password" placeholder="密码" />
+		<button>快速注册</button>
+		<div class="Other-login">注册表示已同意《优惠商城使用协议》和《优惠商城隐私权条款》</div>
+	</div>
+	<script src="components/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		(function() {
+			var bt = document.querySelector("button");
+			var lock = true;
+			bt.addEventListener("touchstart", function() {
+				if (!lock) {
+					return;
+				}
+				lock = false;
+				var data = getLoginMessage();
+				$.ajax({
+					type: "post",
+					url: "http://h6.duchengjiu.top/shop/api_user.php",
+					data: data,
+					success: function(jsondata) {
+						console.log(jsondata);
+						lock = true;
+
+						console.log(lock);
+						if (jsondata.message != "注册成功") {
+							alert(jsondata.message);
+							return;
+						} else {
+
+							var r = confirm("注册成功,是否立即返回登陆页");
+							if (r) {
+								location.href = 'login.html';
+							}
+
+						}
+						//		               if (localStorage.backurl) {
+						//				          location.href = localStorage.backurl;
+						//				        } else {
+						//				          location.href = 'login.html';
+						//				        }
+
+					}
+				});
+			});
+
+
+
+
+
+			function getLoginMessage() {
+				var username = document.querySelector("input[type=text]");
+				var pass = document.querySelector("input[type=password]");
+				//		   	 	 console.log(username,pass);
+				return {
+					status: 'register',
+					username: username.value,
+					password: pass.value,
+				}
+			}
+
+		})()
+	</script>
+</body>
+
 </html>
