@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="CJ.css"/>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.chouj{
+				width: 300px;
+				height: 300px;
+				background: rgba(216,76,41,.5);
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+			}
+			.jiangp{
+				width: 100px;
+				height: 100px;
+				border: 1px solid #00FFFF;
+				float: left;
+				box-sizing:border-box;
+				-moz-box-sizing:border-box; /* Firefox */
+				-webkit-box-sizing:border-box; /* Safari */
+				line-height: 100px;
+				text-align: center;
+			}
+			.cj{
+				float: left;
+				width: 100px;
+				height: 100px;
+				line-height: 100px;
+				text-align: center;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div class="chouj">
+			<div class="jiangp jp1">1</div>
+			<div class="jiangp jp2">2</div>
+			<div class="jiangp jp3">3</div>
+			<div class="jiangp jp8">8</div>
+			<div class="cj">
+				<h3>点击抽奖</h3>
+			</div>
+			<div class="jiangp jp4">4</div>		
+			<div class="jiangp jp7">7</div>
+			<div class="jiangp jp6">6</div>
+			<div class="jiangp jp5">5</div>
+			
+			
+			
+		</div>
+		<script type="text/javascript">
+			var jiangp=document.querySelectorAll('.jiangp');
+			var chouj=document.querySelector('.cj');
+			console.log(jiangp);
+			console.log(chouj);	
+//			随机单个背景改变
+//			function txz(){				
+//				for (var i=0;i<jiangp.length;i++) {
+//					jiangp[i].style.background='rgba(12,12,12,0)';
+//					var id = Math.floor(Math.random()*8);
+//					jiangp[id].style.background='red';
+//				}
+//			}	
+			function txz(){				
+					var id = Math.floor(Math.random()*8);
+					jiangp[id].style.background='red';									
+			}				
+			function bg(){
+						for (var i=0;i<jiangp.length;i++) {
+								jiangp[i].style.background='none';
+						}						
+					}
+//			使改变背景颜色先先一步执行,然后再遍历所有使背景颜色为none;这样就会有一段时间显示改变的颜色了
+		var yanshi1=setInterval("txz()","1000");
+		var yanshi2=setInterval("bg()","1500");
+//		clearInterval(yanshi1);停止循环
+
+//      点击抽奖事件1(弹出用户信息框)
+		var bps=0;
+		chouj.addEventListener('click',function(){	
+			if (bps<1) {
+				bps++;
+				console.log(bps)
+				alert('请输入手机号');
+				//弹出输入框
+			} else{
+				//执行抽奖（出现问题：依次单个背景变色；解决方法：用变量x从0开始开定时没0.5秒加一并使相应的div变色,x=8使x=0，
+				//如果x>0使另一变量y=x-1并使第y背景还原；）
+				alert('号了');
+			}
+			
+		})
+		</script>
+	</body>
+</html>
